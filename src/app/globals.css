@@ -1,0 +1,187 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 197 43% 17%;
+  --foreground: 40 28% 94%;
+  --card: 197 38% 14%;
+  --card-foreground: 40 28% 92%;
+  --popover: 218 38% 11%;
+  --popover-foreground: 40 28% 92%;
+  --primary: 40 45% 58%;
+  --primary-foreground: 218 55% 10%;
+  --secondary: 218 28% 18%;
+  --secondary-foreground: 40 25% 90%;
+  --muted: 218 24% 14%;
+  --muted-foreground: 218 14% 68%;
+  --accent: 40 45% 58%;
+  --accent-foreground: 218 55% 10%;
+  --destructive: 0 60% 45%;
+  --destructive-foreground: 0 0% 100%;
+  --border: 218 22% 20%;
+  --input: 218 22% 20%;
+  --ring: 40 48% 55%;
+  --radius: 0.75rem;
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: var(--font-sans), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgba(181, 143, 74, 0.4);
+  color: #0a1426;
+}
+
+/* Subtle grid over dark surfaces */
+.bg-lux-grid {
+  background-image:
+    linear-gradient(to right, rgba(201, 168, 110, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(201, 168, 110, 0.05) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+.bg-lux-grid-fine {
+  background-image:
+    linear-gradient(to right, rgba(201, 168, 110, 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(201, 168, 110, 0.06) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.bg-lux-grid-dark {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+.radial-spotlight {
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(5, 10, 15, 0.35) 0%,
+      transparent 18%,
+      transparent 82%,
+      rgba(5, 10, 15, 0.45) 100%
+    );
+}
+
+.edge-fade-top {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.35) 0%,
+    transparent 100%
+  );
+}
+
+.edge-fade-bottom {
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.4) 0%,
+    transparent 100%
+  );
+}
+
+/* Gold shimmering heading for the dark bg */
+.shine-text {
+  background: linear-gradient(
+    110deg,
+    #7a5c36 0%,
+    #d9ba5c 30%,
+    #f3e9c9 50%,
+    #d9ba5c 70%,
+    #7a5c36 100%
+  );
+  background-size: 200% 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: shimmer 6s linear infinite;
+}
+
+.glow-ring {
+  box-shadow:
+    0 0 0 1px rgba(201, 168, 110, 0.18),
+    0 0 80px rgba(181, 143, 74, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+}
+
+.hairline {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(201, 168, 110, 0.35),
+    transparent
+  );
+}
+
+/* Diagonal pinstripe background for logo canvases */
+.bg-pinstripe {
+  background-image: repeating-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.03) 0 2px,
+    transparent 2px 18px
+  );
+}
+
+/* Orbital animations (from 21st.dev integration) */
+@keyframes orbital-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes orbital-ping {
+  75%,
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.animate-orbital-pulse {
+  animation: orbital-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-orbital-ping {
+  animation: orbital-ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

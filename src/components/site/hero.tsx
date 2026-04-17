@@ -1,0 +1,246 @@
+"use client";
+import { motion } from "framer-motion";
+import { ArrowDownRight, ArrowUpRight, Shield } from "lucide-react";
+import {
+  AGENCIES,
+  BRAND_META,
+  BRAND_GRADIENT,
+  type Brand,
+} from "@/lib/agencies";
+import { BrandLockup } from "@/components/brand-marks";
+
+const STATS = [
+  { value: "10", label: "Agencias" },
+  { value: "04", label: "Estados" },
+  { value: "03", label: "Marcas" },
+  { value: "25+", label: "Años" },
+];
+
+const BRAND_CARDS: {
+  key: Brand;
+  description: string;
+  lineup: string[];
+}[] = [
+  {
+    key: "ford",
+    description:
+      "Potencia americana y tecnología de vanguardia. Camionetas, SUVs y eléctricos.",
+    lineup: ["Ranger", "F-150", "Bronco", "Mustang Mach-E", "Explorer"],
+  },
+  {
+    key: "mazda",
+    description:
+      "Kodo, la filosofía japonesa del movimiento. Artesanía y emoción al conducir.",
+    lineup: ["CX-5", "CX-50", "CX-70", "CX-90", "Mazda3"],
+  },
+  {
+    key: "volvo",
+    description:
+      "Lujo escandinavo y electrificación inteligente. Seguridad humana en cada detalle.",
+    lineup: ["XC90", "XC60", "XC40 Recharge", "EX30", "S90"],
+  },
+];
+
+export function Hero() {
+  return (
+    <section id="top" className="relative isolate overflow-hidden">
+      {/* Atmosphere */}
+      <div className="absolute inset-0 -z-20 bg-gradient-to-b from-petrol-800 via-petrol-900 to-petrol-950" />
+      <div className="absolute inset-0 -z-10 bg-lux-grid opacity-[0.3]" />
+      <div className="absolute inset-0 -z-10 radial-spotlight" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-px bg-gradient-to-r from-transparent via-gold-500/30 to-transparent" />
+
+      <div className="relative mx-auto flex max-w-7xl flex-col items-center px-6 pb-20 pt-36 lg:px-10">
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
+          className="mb-8 flex items-center gap-3 rounded-full border border-gold-400/25 bg-white/[0.04] px-5 py-2 backdrop-blur-xl"
+        >
+          <span className="relative flex h-2 w-2">
+            <span className="absolute inset-0 animate-ping rounded-full bg-gold-400 opacity-70" />
+            <span className="relative inline-flex h-2 w-2 rounded-full bg-gold-400" />
+          </span>
+          <span className="text-[11px] font-medium uppercase tracking-[0.32em] text-gold-100/85">
+            Distribuidor Autorizado · Noreste de México
+          </span>
+        </motion.div>
+
+        <motion.h1
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
+          className="max-w-4xl text-balance text-center font-display text-[44px] font-light leading-[1.02] tracking-tight text-white sm:text-6xl md:text-7xl"
+        >
+          Tres legados.{" "}
+          <span className="shine-text italic">Una sola exigencia.</span>
+        </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
+          className="mt-6 max-w-2xl text-balance text-center text-sm leading-relaxed text-white/65 md:text-base"
+        >
+          Grupo CAR representa a Ford, Mazda y Volvo en Nuevo León, Coahuila,
+          Tamaulipas y Chihuahua. Una red construida sobre precisión, servicio
+          y confianza.
+        </motion.p>
+
+        {/* Brand cards — hero centerpiece */}
+        <div id="marcas" className="mt-16 grid w-full gap-6 md:gap-8 lg:grid-cols-3">
+          {BRAND_CARDS.map((brand, i) => {
+            const meta = BRAND_META[brand.key];
+            const gradient = BRAND_GRADIENT[brand.key];
+            const count = AGENCIES.filter(
+              (a) => a.brand === brand.key,
+            ).length;
+            return (
+              <motion.article
+                key={brand.key}
+                initial={{ opacity: 0, y: 32 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 1,
+                  delay: 0.45 + i * 0.12,
+                  ease: [0.16, 1, 0.3, 1],
+                }}
+                className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-gold-400/15 bg-petrol-950 shadow-2xl shadow-black/50 transition-all duration-700 hover:-translate-y-1 hover:border-gold-400/50 hover:shadow-black/60"
+              >
+                {/* Logo header */}
+                <div
+                  className={`relative h-52 overflow-hidden ${gradient}`}
+                >
+                  <div className="absolute inset-0 bg-pinstripe opacity-55" />
+                  <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/55 to-transparent" />
+                  <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold-300/40 to-transparent" />
+
+                  <div className="absolute left-6 top-6 rounded-full border border-gold-300/40 bg-petrol-950/75 px-3 py-1 text-[10px] font-medium uppercase tracking-[0.32em] text-gold-100 backdrop-blur-md">
+                    {count} Agencias
+                  </div>
+
+                  <ArrowUpRight
+                    className="absolute right-6 top-6 h-6 w-6 text-gold-200 transition-all duration-500 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-gold-300"
+                    strokeWidth={1.25}
+                  />
+
+                  <div className="absolute inset-0 flex items-center justify-center px-8">
+                    <BrandLockup
+                      brand={brand.key}
+                      className={`h-14 w-auto drop-shadow-[0_6px_20px_rgba(0,0,0,0.55)] md:h-16 ${
+                        brand.key === "ford" ? "" : "text-white"
+                      }`}
+                    />
+                  </div>
+
+                  <div className="absolute bottom-5 left-6 right-6 flex items-end justify-between">
+                    <h3 className="font-display text-4xl font-light tracking-tight text-white/95 drop-shadow-lg">
+                      {meta.label}
+                    </h3>
+                    <span className="text-[10px] font-medium uppercase tracking-[0.32em] text-gold-300/80">
+                      Distribuidor
+                    </span>
+                  </div>
+                </div>
+
+                <div className="flex flex-1 flex-col gap-5 p-7">
+                  <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-wine-300">
+                    {meta.tagline}
+                  </p>
+                  <p className="text-sm leading-relaxed text-white/75">
+                    {brand.description}
+                  </p>
+                  <div>
+                    <p className="mb-2 text-[10px] font-medium uppercase tracking-[0.32em] text-white/45">
+                      Lineup Destacado
+                    </p>
+                    <div className="flex flex-wrap gap-1.5">
+                      {brand.lineup.map((model) => (
+                        <span
+                          key={model}
+                          className="rounded-full border border-white/10 bg-white/[0.04] px-2.5 py-0.5 text-[11px] text-white/80"
+                        >
+                          {model}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                  <a
+                    href="#agencias"
+                    className="mt-auto flex items-center justify-between border-t border-white/10 pt-4 text-[11px] font-medium uppercase tracking-[0.32em] text-white/65 transition-colors hover:text-gold-300"
+                  >
+                    Ver agencias {meta.label}
+                    <span className="transition-transform duration-500 group-hover:translate-x-1">
+                      →
+                    </span>
+                  </a>
+                </div>
+              </motion.article>
+            );
+          })}
+        </div>
+
+        {/* CTAs */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.85 }}
+          className="mt-14 flex flex-col items-center gap-4 sm:flex-row"
+        >
+          <a
+            href="#agencias"
+            className="group relative inline-flex items-center gap-3 overflow-hidden rounded-full bg-gold-400 px-8 py-4 text-sm font-semibold uppercase tracking-[0.22em] text-navy-950 shadow-lg shadow-gold-500/25 transition-all duration-500 hover:bg-gold-300"
+          >
+            <span className="relative z-10">Explorar Agencias</span>
+            <ArrowDownRight
+              className="relative z-10 transition-transform duration-500 group-hover:translate-x-1 group-hover:translate-y-1"
+              size={16}
+            />
+          </a>
+          <a
+            href="#contacto"
+            className="group inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.03] px-8 py-4 text-sm font-medium uppercase tracking-[0.22em] text-white/90 backdrop-blur-sm transition-all duration-500 hover:border-gold-400/60 hover:bg-white/[0.06]"
+          >
+            Agendar Cita
+          </a>
+        </motion.div>
+
+        {/* Stats bar */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1], delay: 1 }}
+          className="mt-16 grid w-full max-w-5xl grid-cols-2 gap-px overflow-hidden rounded-2xl border border-gold-400/30 bg-gold-400/20 shadow-2xl shadow-black/50 backdrop-blur-xl md:grid-cols-4"
+        >
+          {STATS.map((s, i) => (
+            <div
+              key={s.label}
+              className="relative bg-petrol-950 px-6 py-7 text-center transition-colors duration-500 hover:bg-petrol-900"
+            >
+              <div className="font-display text-5xl font-light text-white md:text-6xl">
+                {s.value}
+              </div>
+              <div className="mt-3 text-[10px] font-medium uppercase tracking-[0.32em] text-gold-200/70">
+                {s.label}
+              </div>
+              {i < STATS.length - 1 && (
+                <span className="absolute right-0 top-1/4 hidden h-1/2 w-px bg-white/10 md:block" />
+              )}
+            </div>
+          ))}
+        </motion.div>
+
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-x-10 gap-y-4 text-[11px] font-medium uppercase tracking-[0.32em] text-white/45">
+          <span className="flex items-center gap-2">
+            <Shield size={12} className="text-gold-400" />
+            Garantía Oficial
+          </span>
+          <span className="hidden h-3 w-px bg-white/20 sm:block" />
+          <span>Servicio Certificado</span>
+          <span className="hidden h-3 w-px bg-white/20 sm:block" />
+          <span>Financiamiento Premium</span>
+        </div>
+      </div>
+    </section>
+  );
+}
