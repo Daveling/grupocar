@@ -60,18 +60,18 @@ export function Agencies() {
   return (
     <section
       id="agencias"
-      className="relative isolate overflow-hidden border-t border-gold-500/10 bg-petrol-800 py-28 md:py-40"
+      className="relative isolate overflow-hidden border-t border-gold-500/10 bg-petrol-800 py-20 sm:py-28 md:py-40"
     >
       <div className="absolute inset-0 -z-10 bg-lux-grid opacity-40" />
       <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-px bg-gradient-to-r from-transparent via-gold-500/30 to-transparent" />
 
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        <div className="grid items-end gap-10 border-b border-white/10 pb-16 md:grid-cols-[2fr_1fr]">
+      <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-10">
+        <div className="grid items-end gap-8 border-b border-white/10 pb-10 sm:gap-10 sm:pb-16 md:grid-cols-[2fr_1fr]">
           <div>
-            <span className="mb-6 block text-[11px] font-medium uppercase tracking-[0.42em] text-gold-400">
+            <span className="mb-4 block text-[10px] font-medium uppercase tracking-[0.36em] text-gold-400 sm:mb-6 sm:text-[11px] sm:tracking-[0.42em]">
               — Red de Agencias —
             </span>
-            <h2 className="max-w-3xl font-display text-5xl font-light leading-[1.02] tracking-tight text-white md:text-7xl">
+            <h2 className="max-w-3xl font-display text-[40px] font-light leading-[1.02] tracking-tight text-white sm:text-5xl md:text-7xl">
               Presencia en el{" "}
               <span className="italic text-gold-300">noreste</span> del país.
             </h2>
@@ -97,14 +97,14 @@ export function Agencies() {
         </div>
 
         {/* Filters */}
-        <div className="mt-24 flex flex-wrap items-center justify-center gap-2 md:gap-3">
+        <div className="mt-16 flex flex-wrap items-center justify-center gap-2 sm:mt-24 md:gap-3">
           {FILTERS.map((f) => {
             const isActive = filter === f.key;
             return (
               <button
                 key={f.key}
                 onClick={() => setFilter(f.key)}
-                className={`relative overflow-hidden rounded-full border px-6 py-3 text-[11px] font-medium uppercase tracking-[0.28em] transition-all duration-500 ${
+                className={`relative overflow-hidden rounded-full border px-4 py-2.5 text-[10px] font-medium uppercase tracking-[0.24em] transition-all duration-500 sm:px-6 sm:py-3 sm:text-[11px] sm:tracking-[0.28em] ${
                   isActive
                     ? "border-gold-400 bg-gold-400 text-navy-950 shadow-md shadow-gold-500/30"
                     : "border-white/15 bg-white/[0.04] text-white/70 hover:border-gold-400/60 hover:text-white"
@@ -124,7 +124,7 @@ export function Agencies() {
         </div>
 
         {/* Agency cards grid */}
-        <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid gap-4 sm:mt-12 sm:gap-5 md:grid-cols-2 lg:grid-cols-3">
           <AnimatePresence mode="popLayout">
             {filtered.map((a, i) => {
               const meta = BRAND_META[a.brand];
@@ -144,7 +144,7 @@ export function Agencies() {
                     delay: i * 0.04,
                     ease: [0.16, 1, 0.3, 1],
                   }}
-                  className={`group relative flex flex-col gap-5 overflow-hidden rounded-2xl border border-white/10 ${gradient} p-7 text-left shadow-2xl shadow-black/40 transition-all duration-700 hover:border-gold-400/60 hover:shadow-gold-500/20`}
+                  className={`group relative flex flex-col gap-4 overflow-hidden rounded-2xl border border-white/10 ${gradient} p-5 text-left shadow-2xl shadow-black/40 transition-all duration-700 hover:border-gold-400/60 hover:shadow-gold-500/20 sm:gap-5 sm:p-7`}
                 >
                   <div className="pointer-events-none absolute inset-0 bg-pinstripe opacity-50" />
 
@@ -165,7 +165,7 @@ export function Agencies() {
                   </div>
 
                   <div className="relative">
-                    <h3 className="font-display text-[28px] font-light leading-tight tracking-tight text-white">
+                    <h3 className="font-display text-2xl font-light leading-tight tracking-tight text-white sm:text-[28px]">
                       {a.name}
                     </h3>
                     <p className="mt-1 text-[11px] font-medium uppercase tracking-[0.28em] text-gold-200">

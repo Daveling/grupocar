@@ -6,11 +6,11 @@ export function Footer() {
   const brands = ["ford", "mazda", "volvo"] as const;
 
   return (
-    <footer className="relative overflow-hidden border-t border-gold-400/20 bg-petrol-950 py-20">
+    <footer className="relative overflow-hidden border-t border-gold-400/20 bg-petrol-950 py-14 sm:py-20">
       <div className="absolute inset-0 bg-lux-grid-dark opacity-40" />
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold-400/40 to-transparent" />
 
-      <div className="relative mx-auto grid max-w-7xl gap-14 px-6 md:grid-cols-[1.4fr_repeat(3,1fr)] lg:px-10">
+      <div className="relative mx-auto grid max-w-7xl gap-10 px-5 sm:gap-14 sm:px-6 md:grid-cols-[1.4fr_repeat(3,1fr)] lg:px-10">
         <div>
           <div className="flex items-center gap-3">
             <span className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-xl bg-white shadow-inner shadow-black/40">
@@ -59,14 +59,14 @@ export function Footer() {
         ))}
       </div>
 
-      <div className="relative mx-auto mt-16 flex max-w-7xl flex-col items-start justify-between gap-4 border-t border-white/10 px-6 pt-8 text-[11px] uppercase tracking-[0.28em] text-white/45 md:flex-row md:items-center lg:px-10">
+      <div className="relative mx-auto mt-12 flex max-w-7xl flex-col items-start justify-between gap-4 border-t border-white/10 px-5 pt-8 text-[10px] uppercase tracking-[0.24em] text-white/45 sm:mt-16 sm:px-6 sm:text-[11px] sm:tracking-[0.28em] md:flex-row md:items-center lg:px-10">
         <div>© {year} Grupo Car S.A. de C.V. — Todos los derechos reservados.</div>
-        <div className="flex items-center gap-6">
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-2 sm:gap-6">
           <span>Noreste · México</span>
           <span className="hidden h-3 w-px bg-white/20 md:block" />
           <a
             href="mailto:DiegoMunguiaC@grupocar.mx"
-            className="transition-colors hover:text-gold-200"
+            className="break-all normal-case tracking-normal text-white/60 transition-colors hover:text-gold-200 sm:uppercase sm:tracking-[0.28em] sm:text-white/45"
           >
             DiegoMunguiaC@grupocar.mx
           </a>

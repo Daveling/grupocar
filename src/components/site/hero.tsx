@@ -50,18 +50,18 @@ export function Hero() {
       <div className="absolute inset-0 -z-10 radial-spotlight" />
       <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-px bg-gradient-to-r from-transparent via-gold-500/30 to-transparent" />
 
-      <div className="relative mx-auto flex max-w-7xl flex-col items-center px-6 pb-20 pt-36 lg:px-10">
+      <div className="relative mx-auto flex max-w-7xl flex-col items-center px-5 pb-16 pt-28 sm:px-6 sm:pb-20 sm:pt-36 lg:px-10">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-          className="mb-8 flex items-center gap-3 rounded-full border border-gold-400/25 bg-white/[0.04] px-5 py-2 backdrop-blur-xl"
+          className="mb-8 flex items-center gap-2 rounded-full border border-gold-400/25 bg-white/[0.04] px-4 py-2 backdrop-blur-xl sm:gap-3 sm:px-5"
         >
           <span className="relative flex h-2 w-2">
             <span className="absolute inset-0 animate-ping rounded-full bg-gold-400 opacity-70" />
             <span className="relative inline-flex h-2 w-2 rounded-full bg-gold-400" />
           </span>
-          <span className="text-[11px] font-medium uppercase tracking-[0.32em] text-gold-100/85">
+          <span className="text-[9px] font-medium uppercase tracking-[0.22em] text-gold-100/85 sm:text-[11px] sm:tracking-[0.32em]">
             Distribuidor Autorizado · Noreste de México
           </span>
         </motion.div>
@@ -88,7 +88,7 @@ export function Hero() {
         </motion.p>
 
         {/* Brand cards — hero centerpiece */}
-        <div id="marcas" className="mt-16 grid w-full gap-6 md:gap-8 lg:grid-cols-3">
+        <div id="marcas" className="mt-12 grid w-full gap-5 sm:mt-16 sm:gap-6 md:gap-8 md:grid-cols-2 lg:grid-cols-3">
           {BRAND_CARDS.map((brand, i) => {
             const meta = BRAND_META[brand.key];
             const gradient = BRAND_GRADIENT[brand.key];
@@ -109,41 +109,41 @@ export function Hero() {
               >
                 {/* Logo header */}
                 <div
-                  className={`relative h-52 overflow-hidden ${gradient}`}
+                  className={`relative h-44 overflow-hidden sm:h-52 ${gradient}`}
                 >
                   <div className="absolute inset-0 bg-pinstripe opacity-55" />
                   <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/55 to-transparent" />
                   <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold-300/40 to-transparent" />
 
-                  <div className="absolute left-6 top-6 rounded-full border border-gold-300/40 bg-petrol-950/75 px-3 py-1 text-[10px] font-medium uppercase tracking-[0.32em] text-gold-100 backdrop-blur-md">
+                  <div className="absolute left-4 top-4 rounded-full border border-gold-300/40 bg-petrol-950/75 px-2.5 py-1 text-[9px] font-medium uppercase tracking-[0.24em] text-gold-100 backdrop-blur-md sm:left-6 sm:top-6 sm:px-3 sm:text-[10px] sm:tracking-[0.32em]">
                     {count} Agencias
                   </div>
 
                   <ArrowUpRight
-                    className="absolute right-6 top-6 h-6 w-6 text-gold-200 transition-all duration-500 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-gold-300"
+                    className="absolute right-4 top-4 h-5 w-5 text-gold-200 transition-all duration-500 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-gold-300 sm:right-6 sm:top-6 sm:h-6 sm:w-6"
                     strokeWidth={1.25}
                   />
 
-                  <div className="absolute inset-0 flex items-center justify-center px-8">
+                  <div className="absolute inset-0 flex items-center justify-center px-6 sm:px-8">
                     <BrandLockup
                       brand={brand.key}
-                      className={`h-14 w-auto drop-shadow-[0_6px_20px_rgba(0,0,0,0.55)] md:h-16 ${
+                      className={`h-12 w-auto drop-shadow-[0_6px_20px_rgba(0,0,0,0.55)] sm:h-14 md:h-16 ${
                         brand.key === "ford" ? "" : "text-white"
                       }`}
                     />
                   </div>
 
-                  <div className="absolute bottom-5 left-6 right-6 flex items-end justify-between">
-                    <h3 className="font-display text-4xl font-light tracking-tight text-white/95 drop-shadow-lg">
+                  <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between sm:bottom-5 sm:left-6 sm:right-6">
+                    <h3 className="font-display text-3xl font-light tracking-tight text-white/95 drop-shadow-lg sm:text-4xl">
                       {meta.label}
                     </h3>
-                    <span className="text-[10px] font-medium uppercase tracking-[0.32em] text-gold-300/80">
+                    <span className="text-[9px] font-medium uppercase tracking-[0.24em] text-gold-300/80 sm:text-[10px] sm:tracking-[0.32em]">
                       Distribuidor
                     </span>
                   </div>
                 </div>
 
-                <div className="flex flex-1 flex-col gap-5 p-7">
+                <div className="flex flex-1 flex-col gap-4 p-6 sm:gap-5 sm:p-7">
                   <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-wine-300">
                     {meta.tagline}
                   </p>
@@ -215,9 +215,9 @@ export function Hero() {
           {STATS.map((s, i) => (
             <div
               key={s.label}
-              className="relative bg-petrol-950 px-6 py-7 text-center transition-colors duration-500 hover:bg-petrol-900"
+              className="relative bg-petrol-950 px-4 py-6 text-center transition-colors duration-500 hover:bg-petrol-900 sm:px-6 sm:py-7"
             >
-              <div className="font-display text-5xl font-light text-white md:text-6xl">
+              <div className="font-display text-4xl font-light text-white sm:text-5xl md:text-6xl">
                 {s.value}
               </div>
               <div className="mt-3 text-[10px] font-medium uppercase tracking-[0.32em] text-gold-200/70">

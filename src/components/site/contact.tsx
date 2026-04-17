@@ -6,12 +6,12 @@ export function Contact() {
   return (
     <section
       id="contacto"
-      className="relative isolate overflow-hidden border-t border-gold-500/10 bg-gradient-to-b from-petrol-800 via-petrol-900 to-petrol-950 py-28 md:py-40"
+      className="relative isolate overflow-hidden border-t border-gold-500/10 bg-gradient-to-b from-petrol-800 via-petrol-900 to-petrol-950 py-20 sm:py-28 md:py-40"
     >
       <div className="absolute inset-0 -z-10 bg-lux-grid opacity-35" />
       <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-px bg-gradient-to-r from-transparent via-gold-500/30 to-transparent" />
 
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">
+      <div className="mx-auto max-w-7xl px-5 sm:px-6 lg:px-10">
         <motion.div
           initial={{ opacity: 0, y: 32 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -22,7 +22,7 @@ export function Contact() {
           <span className="mb-6 block text-[11px] font-medium uppercase tracking-[0.42em] text-gold-400">
             — Contacto —
           </span>
-          <h2 className="font-display text-5xl font-light leading-[1.02] tracking-tight text-white md:text-[88px]">
+          <h2 className="font-display text-[40px] font-light leading-[1.02] tracking-tight text-white sm:text-5xl md:text-[88px]">
             Hablemos de tu
             <br />
             <span className="italic text-gold-300">
@@ -90,19 +90,19 @@ export function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-40px" }}
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-          className="mx-auto mt-20 flex max-w-4xl flex-col items-center gap-8 rounded-3xl border border-gold-400/40 bg-navy-950 p-10 text-center shadow-2xl shadow-black/60 md:p-16"
+          className="mx-auto mt-16 flex max-w-4xl flex-col items-center gap-6 rounded-3xl border border-gold-400/40 bg-navy-950 p-8 text-center shadow-2xl shadow-black/60 sm:mt-20 sm:gap-8 sm:p-10 md:p-16"
         >
           <div className="text-[11px] font-medium uppercase tracking-[0.42em] text-gold-300">
             Grupo Car SA de CV
           </div>
-          <h3 className="font-display text-4xl font-light leading-tight text-white md:text-6xl">
+          <h3 className="font-display text-3xl font-light leading-tight text-white sm:text-4xl md:text-6xl">
             Una cita, una entrega,
             <br />
             <span className="italic text-gold-200">una impresión duradera.</span>
           </h3>
           <a
             href="mailto:DiegoMunguiaC@grupocar.mx?subject=Cita%20Grupo%20CAR"
-            className="group relative mt-2 inline-flex items-center gap-3 overflow-hidden rounded-full bg-gold-400 px-10 py-5 text-sm font-semibold uppercase tracking-[0.28em] text-navy-950 transition-all duration-500 hover:bg-gold-300"
+            className="group relative mt-2 inline-flex items-center gap-3 overflow-hidden rounded-full bg-gold-400 px-6 py-4 text-xs font-semibold uppercase tracking-[0.22em] text-navy-950 transition-all duration-500 hover:bg-gold-300 sm:px-10 sm:py-5 sm:text-sm sm:tracking-[0.28em]"
           >
             <span className="relative z-10">Agendar Cita Privada</span>
             <ArrowUpRight
