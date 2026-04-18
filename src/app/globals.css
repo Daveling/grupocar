@@ -263,6 +263,26 @@ body {
 .leaflet-control-attribution a {
   color: rgba(245, 199, 106, 0.7) !important;
 }
+/* Dark green land + navy water via Voyager tile filter */
+.map-tiles {
+  filter: brightness(0.28) saturate(5) hue-rotate(15deg) contrast(1.15) !important;
+}
+/* Zoom control styling */
+.leaflet-control-zoom {
+  border: 1px solid rgba(245, 199, 106, 0.2) !important;
+  border-radius: 10px !important;
+  overflow: hidden;
+}
+.leaflet-control-zoom a {
+  background: rgba(10, 14, 25, 0.85) !important;
+  color: rgba(245, 199, 106, 0.8) !important;
+  border-bottom: 1px solid rgba(245, 199, 106, 0.15) !important;
+  backdrop-filter: blur(8px);
+}
+.leaflet-control-zoom a:hover {
+  background: rgba(20, 26, 40, 0.95) !important;
+  color: #f5c76a !important;
+}
 
 @media (prefers-reduced-motion: reduce) {
   *,

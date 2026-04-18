@@ -79,17 +79,18 @@ export default function AgenciesMap({ filter }: AgenciesMapProps) {
       <MapContainer
         center={[26.5, -101.5]}
         zoom={6}
-        scrollWheelZoom={false}
+        scrollWheelZoom={true}
         style={{
           height: "560px",
           width: "100%",
-          background: "#0a0f1a",
+          background: "#0a1a14",
         }}
-        zoomControl={false}
+        zoomControl={true}
       >
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/attributions">CARTO</a>'
-          url="https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png"
+          url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
+          className="map-tiles"
         />
         <FitBounds filter={filter} />
         {visible.map((a) => (

@@ -159,9 +159,6 @@ export function Hero() {
                   <p className="text-[11px] font-medium uppercase tracking-[0.28em] text-wine-300">
                     {meta.tagline}
                   </p>
-                  <p className="text-sm leading-relaxed text-white/75">
-                    {brand.description}
-                  </p>
                   <div>
                     <p className="mb-2 text-[10px] font-medium uppercase tracking-[0.32em] text-white/45">
                       Lineup Destacado
