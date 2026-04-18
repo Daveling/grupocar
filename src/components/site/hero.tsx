@@ -1,6 +1,7 @@
 "use client";
-import { motion } from "framer-motion";
-import { ArrowDownRight, ArrowUpRight, Shield } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+import { ArrowDownRight, ArrowUpRight, ChevronDown, Shield } from "lucide-react";
 import {
   AGENCIES,
   BRAND_META,
@@ -10,9 +11,9 @@ import {
 import { BrandLockup } from "@/components/brand-marks";
 
 const STATS = [
-  { value: "10", label: "Agencias" },
+  { value: "11", label: "Agencias" },
   { value: "04", label: "Estados" },
-  { value: "03", label: "Marcas" },
+  { value: "04", label: "Marcas" },
   { value: "25+", label: "Años" },
 ];
 
@@ -39,9 +40,39 @@ const BRAND_CARDS: {
       "Lujo escandinavo y electrificación inteligente. Seguridad humana en cada detalle.",
     lineup: ["XC90", "XC60", "XC40 Recharge", "EX30", "S90"],
   },
+  {
+    key: "lincoln",
+    description:
+      "Lujo americano refinado. Silencio, confort y presencia ejecutiva en cada detalle.",
+    lineup: ["Navigator", "Nautilus", "Aviator", "Corsair"],
+  },
 ];
 
 export function Hero() {
+  const [openBrand, setOpenBrand] = useState<Brand | null>(null);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!openBrand) return;
+    const onClick = (e: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(e.target as Node)
+      ) {
+        setOpenBrand(null);
+      }
+    };
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpenBrand(null);
+    };
+    document.addEventListener("mousedown", onClick);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("mousedown", onClick);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [openBrand]);
+
   return (
     <section id="top" className="relative isolate overflow-hidden">
       {/* Atmosphere */}
@@ -88,7 +119,7 @@ export function Hero() {
         </motion.p>
 
         {/* Brand cards — hero centerpiece */}
-        <div id="marcas" className="mt-12 grid w-full gap-5 sm:mt-16 sm:gap-6 md:gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <div id="marcas" className="mt-12 grid w-full gap-5 sm:mt-16 sm:gap-6 md:gap-8 md:grid-cols-2 lg:grid-cols-4">
           {BRAND_CARDS.map((brand, i) => {
             const meta = BRAND_META[brand.key];
             const gradient = BRAND_GRADIENT[brand.key];
@@ -165,15 +196,73 @@ export function Hero() {
                       ))}
                     </div>
                   </div>
-                  <a
-                    href="#agencias"
-                    className="mt-auto flex items-center justify-between border-t border-white/10 pt-4 text-[11px] font-medium uppercase tracking-[0.32em] text-white/65 transition-colors hover:text-gold-300"
+                  <div
+                    className="relative mt-auto"
+                    ref={openBrand === brand.key ? dropdownRef : undefined}
                   >
-                    Ver agencias {meta.label}
-                    <span className="transition-transform duration-500 group-hover:translate-x-1">
-                      →
-                    </span>
-                  </a>
+                    <button
+                      type="button"
+                      onClick={() =>
+                        setOpenBrand((prev) =>
+                          prev === brand.key ? null : brand.key,
+                        )
+                      }
+                      aria-expanded={openBrand === brand.key}
+                      aria-haspopup="menu"
+                      className="flex w-full items-center justify-between border-t border-white/10 pt-4 text-[11px] font-medium uppercase tracking-[0.32em] text-white/65 transition-colors hover:text-gold-300"
+                    >
+                      <span>Visitar sitio {meta.label}</span>
+                      <ChevronDown
+                        size={14}
+                        className={`transition-transform duration-300 ${
+                          openBrand === brand.key ? "rotate-180" : ""
+                        }`}
+                      />
+                    </button>
+
+                    <AnimatePresence>
+                      {openBrand === brand.key && (
+                        <motion.div
+                          initial={{ opacity: 0, y: -6, scale: 0.98 }}
+                          animate={{ opacity: 1, y: 0, scale: 1 }}
+                          exit={{ opacity: 0, y: -4, scale: 0.98 }}
+                          transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+                          role="menu"
+                          className="absolute bottom-full left-0 right-0 z-20 mb-3 overflow-hidden rounded-xl border border-gold-400/25 bg-petrol-950/95 shadow-2xl shadow-black/60 backdrop-blur-xl"
+                        >
+                          <ul className="divide-y divide-white/5">
+                            {AGENCIES.filter(
+                              (a) => a.brand === brand.key,
+                            ).map((a) => (
+                              <li key={a.id}>
+                                <a
+                                  href={a.href}
+                                  target="_blank"
+                                  rel="noreferrer"
+                                  onClick={() => setOpenBrand(null)}
+                                  role="menuitem"
+                                  className="flex items-center justify-between gap-3 px-4 py-3 text-left text-sm text-white/80 transition-colors hover:bg-white/5 hover:text-gold-200"
+                                >
+                                  <span className="flex flex-col">
+                                    <span className="font-medium">
+                                      {a.name}
+                                    </span>
+                                    <span className="text-[10px] uppercase tracking-[0.24em] text-white/45">
+                                      {a.state}
+                                    </span>
+                                  </span>
+                                  <ArrowUpRight
+                                    size={14}
+                                    className="flex-shrink-0 text-gold-300/80"
+                                  />
+                                </a>
+                              </li>
+                            ))}
+                          </ul>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
                 </div>
               </motion.article>
             );

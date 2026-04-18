@@ -41,13 +41,13 @@ export function Contact() {
               icon: User,
               label: "Contacto",
               value: "Diego Munguía Camou",
-              href: "mailto:DiegoMunguiaC@grupocar.mx",
+              href: "mailto:diego.munguia@grupocar.mx",
             },
             {
               icon: Mail,
               label: "Correo",
-              value: "DiegoMunguiaC@grupocar.mx",
-              href: "mailto:DiegoMunguiaC@grupocar.mx",
+              value: "diego.munguia@grupocar.mx",
+              href: "mailto:diego.munguia@grupocar.mx",
             },
           ].map((c, i) => (
             <motion.a
@@ -101,7 +101,7 @@ export function Contact() {
             <span className="italic text-gold-200">una impresión duradera.</span>
           </h3>
           <a
-            href="mailto:DiegoMunguiaC@grupocar.mx?subject=Cita%20Grupo%20CAR"
+            href="mailto:diego.munguia@grupocar.mx?subject=Cita%20Grupo%20CAR"
             className="group relative mt-2 inline-flex items-center gap-3 overflow-hidden rounded-full bg-gold-400 px-6 py-4 text-xs font-semibold uppercase tracking-[0.22em] text-navy-950 transition-all duration-500 hover:bg-gold-300 sm:px-10 sm:py-5 sm:text-sm sm:tracking-[0.28em]"
           >
             <span className="relative z-10">Agendar Cita Privada</span>

@@ -1,11 +1,17 @@
 "use client";
 import { motion } from "framer-motion";
-import { FordMark, MazdaMark, VolvoMark } from "@/components/brand-marks";
+import {
+  FordMark,
+  LincolnMark,
+  MazdaMark,
+  VolvoMark,
+} from "@/components/brand-marks";
 
 const BRANDS = [
   { key: "ford", Mark: FordMark, tone: "" },
   { key: "mazda", Mark: MazdaMark, tone: "text-white" },
   { key: "volvo", Mark: VolvoMark, tone: "text-white" },
+  { key: "lincoln", Mark: LincolnMark, tone: "text-white" },
 ] as const;
 
 export function BrandRibbon() {
@@ -24,7 +30,7 @@ export function BrandRibbon() {
           <span className="h-px w-10 bg-gold-400/70 md:hidden" />
         </div>
 
-        <div className="grid w-full grid-cols-3 items-center gap-8 md:w-auto md:gap-16">
+        <div className="grid w-full grid-cols-2 items-center gap-8 sm:grid-cols-4 md:w-auto md:gap-12 lg:gap-16">
           {BRANDS.map(({ key, Mark, tone }, i) => (
             <motion.div
               key={key}

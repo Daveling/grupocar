@@ -33,6 +33,16 @@ const SLIDES = [
     model: "XC60",
     src: "/carpictures/Volvoxc60.avif",
   },
+  {
+    brand: "Lincoln",
+    model: "Navigator Black Label",
+    src: "/carpictures/2025-Lincoln-Navigator-Black-Label-1-scaled.jpg",
+  },
+  {
+    brand: "Lincoln",
+    model: "Nautilus",
+    src: "/carpictures/lincolnnautilus.avif",
+  },
 ];
 
 export function Experience() {

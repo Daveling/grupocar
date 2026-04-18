@@ -3,10 +3,11 @@ import { useState, useEffect, useRef } from "react";
 import { ArrowRight, Link as LinkIcon } from "lucide-react";
 import { GrupoCarMark } from "@/components/brand-marks";
 
-const BRAND_LOGO_SRC: Record<"ford" | "mazda" | "volvo", string> = {
+const BRAND_LOGO_SRC: Record<"ford" | "mazda" | "volvo" | "lincoln", string> = {
   ford: "/logos/ford_logo_icon_169155.png",
   mazda: "/logos/Mazda_logo.png",
   volvo: "/logos/Volvo-Logo-1930.png",
+  lincoln: "/logos/logo-Lincoln.png",
 };
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -17,7 +18,7 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-type BrandTone = "ford" | "mazda" | "volvo";
+type BrandTone = "ford" | "mazda" | "volvo" | "lincoln";
 
 interface TimelineItem {
   id: number;
@@ -71,6 +72,15 @@ const BRAND_TONE: Record<
     pulseRgba: "rgba(203,208,216,0.45)",
     label: "text-graphite-100",
     badge: "border-graphite-300 bg-graphite-200 text-navy-950",
+  },
+  lincoln: {
+    ring: "border-graphite-500/70",
+    bg: "bg-gradient-to-br from-graphite-700 to-graphite-950",
+    text: "text-white",
+    glow: "shadow-[0_0_24px_rgba(52,57,66,0.65)]",
+    pulseRgba: "rgba(124,132,148,0.35)",
+    label: "text-graphite-200",
+    badge: "border-graphite-600 bg-graphite-800 text-white",
   },
 };
 

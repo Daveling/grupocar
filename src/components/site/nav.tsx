@@ -54,7 +54,7 @@ export function SiteNav() {
               GRUPO CAR
             </span>
             <span className="mt-1 hidden text-[10px] font-medium uppercase tracking-[0.32em] text-gold-300/70 sm:block">
-              Ford · Mazda · Volvo
+              Ford · Mazda · Volvo · Lincoln
             </span>
           </span>
         </Link>

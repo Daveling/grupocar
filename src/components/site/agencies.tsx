@@ -1,7 +1,7 @@
 "use client";
 import { useMemo, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { MapPin, ArrowUpRight, Building2, Compass, Flag } from "lucide-react";
+import { MapPin, ArrowUpRight, Building2, Compass, Flag, Crown } from "lucide-react";
 import RadialOrbitalTimeline from "@/components/ui/radial-orbital-timeline";
 import { AGENCIES, BRAND_META, BRAND_GRADIENT, type Brand } from "@/lib/agencies";
 
@@ -13,6 +13,7 @@ const FILTERS: { key: Filter; label: string }[] = [
   { key: "ford", label: "Ford" },
   { key: "mazda", label: "Mazda" },
   { key: "volvo", label: "Volvo" },
+  { key: "lincoln", label: "Lincoln" },
 ];
 
 // Pick an icon per brand for the orbital timeline
@@ -20,6 +21,7 @@ const BRAND_ICON: Record<Brand, React.ElementType> = {
   ford: Compass,
   mazda: Flag,
   volvo: Building2,
+  lincoln: Crown,
 };
 
 export function Agencies() {

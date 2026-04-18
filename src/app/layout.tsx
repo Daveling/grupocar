@@ -16,20 +16,22 @@ const display = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  title: "Grupo CAR — Ford · Mazda · Volvo | Noreste de México",
+  title: "Grupo CAR — Ford · Mazda · Volvo · Lincoln | Noreste de México",
   description:
-    "Grupo CAR. Distribuidores autorizados Ford, Mazda y Volvo en Nuevo León, Coahuila, Tamaulipas y Chihuahua. Experiencia automotriz premium en el noreste de México.",
+    "Grupo CAR. Distribuidores autorizados Ford, Mazda, Volvo y Lincoln en Nuevo León, Coahuila, Tamaulipas y Chihuahua. Experiencia automotriz premium en el noreste de México.",
   keywords: [
     "Grupo Car",
     "Ford México",
     "Mazda México",
     "Volvo México",
+    "Lincoln México",
+    "Lincoln Saltillo",
     "Agencia de autos Monterrey",
     "Agencia de autos Saltillo",
     "Distribuidor Volvo Valle Oriente",
   ],
   openGraph: {
-    title: "Grupo CAR — Ford · Mazda · Volvo",
+    title: "Grupo CAR — Ford · Mazda · Volvo · Lincoln",
     description:
       "Grupo automotriz con presencia en Nuevo León, Coahuila, Tamaulipas y Chihuahua.",
     type: "website",

@@ -3,14 +3,14 @@ import { BrandLockup, GrupoCarMark } from "@/components/brand-marks";
 
 export function Footer() {
   const year = new Date().getFullYear();
-  const brands = ["ford", "mazda", "volvo"] as const;
+  const brands = ["ford", "mazda", "volvo", "lincoln"] as const;
 
   return (
     <footer className="relative overflow-hidden border-t border-gold-400/20 bg-petrol-950 py-14 sm:py-20">
       <div className="absolute inset-0 bg-lux-grid-dark opacity-40" />
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold-400/40 to-transparent" />
 
-      <div className="relative mx-auto grid max-w-7xl gap-10 px-5 sm:gap-14 sm:px-6 md:grid-cols-[1.4fr_repeat(3,1fr)] lg:px-10">
+      <div className="relative mx-auto grid max-w-7xl gap-10 px-5 sm:gap-14 sm:px-6 md:grid-cols-2 lg:grid-cols-[1.4fr_repeat(4,1fr)] lg:px-10">
         <div>
           <div className="flex items-center gap-3">
             <span className="flex h-12 w-12 items-center justify-center overflow-hidden rounded-xl bg-white shadow-inner shadow-black/40">
@@ -21,9 +21,9 @@ export function Footer() {
             </span>
           </div>
           <p className="mt-6 max-w-sm text-sm leading-relaxed text-white/60">
-            Distribuidor autorizado Ford, Mazda y Volvo en Nuevo León,
-            Coahuila, Tamaulipas y Chihuahua. Una experiencia automotriz
-            premium en el noreste de México.
+            Distribuidor autorizado Ford, Mazda, Volvo y Lincoln en Nuevo
+            León, Coahuila, Tamaulipas y Chihuahua. Una experiencia
+            automotriz premium en el noreste de México.
           </p>
           <div className="mt-6 text-[10px] font-medium uppercase tracking-[0.32em] text-gold-300/80">
             Grupo Car S.A. de C.V.
@@ -65,10 +65,10 @@ export function Footer() {
           <span>Noreste · México</span>
           <span className="hidden h-3 w-px bg-white/20 md:block" />
           <a
-            href="mailto:DiegoMunguiaC@grupocar.mx"
+            href="mailto:diego.munguia@grupocar.mx"
             className="break-all normal-case tracking-normal text-white/60 transition-colors hover:text-gold-200 sm:uppercase sm:tracking-[0.28em] sm:text-white/45"
           >
-            DiegoMunguiaC@grupocar.mx
+            diego.munguia@grupocar.mx
           </a>
         </div>
       </div>

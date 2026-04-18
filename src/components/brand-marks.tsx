@@ -71,16 +71,28 @@ export function VolvoMark({ className = "", ...props }: ImgProps) {
   );
 }
 
+export function LincolnMark({ className = "", ...props }: ImgProps) {
+  return (
+    <img
+      src="/logos/logo-Lincoln.png"
+      alt="Lincoln"
+      className={`object-contain brightness-0 invert ${className}`}
+      {...props}
+    />
+  );
+}
+
 /** Small inline selector by brand key. */
 export function BrandLockup({
   brand,
   className,
 }: {
-  brand: "ford" | "mazda" | "volvo";
+  brand: "ford" | "mazda" | "volvo" | "lincoln";
   className?: string;
 }) {
   const common = className ?? "h-7 w-auto text-current";
   if (brand === "ford") return <FordMark className={common} />;
   if (brand === "mazda") return <MazdaMark className={common} />;
+  if (brand === "lincoln") return <LincolnMark className={common} />;
   return <VolvoMark className={common} />;
 }

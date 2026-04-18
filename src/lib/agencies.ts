@@ -1,4 +1,4 @@
-export type Brand = "ford" | "mazda" | "volvo";
+export type Brand = "ford" | "mazda" | "volvo" | "lincoln";
 
 export interface Agency {
   id: number;
@@ -19,7 +19,7 @@ export const AGENCIES: Agency[] = [
     state: "Tamaulipas",
     address:
       "Prol. José Ángel Guerra, Lucha Social, Cd. Miguel Alemán, Tamaulipas",
-    href: "https://www.ford.mx/",
+    href: "https://www.fordmiguelaleman.mx/",
   },
   {
     id: 2,
@@ -28,7 +28,7 @@ export const AGENCIES: Agency[] = [
     city: "Sabinas",
     state: "Coahuila",
     address: "Carretera México 15 S/N, Zona Industrial, Sabinas, Coahuila",
-    href: "https://www.ford.mx/",
+    href: "https://www.fordsabinas.mx/",
   },
   {
     id: 3,
@@ -38,7 +38,7 @@ export const AGENCIES: Agency[] = [
     state: "Coahuila",
     address:
       "Blvd. Venustiano Carranza 4600, Virreyes Residencial, Saltillo, Coahuila",
-    href: "https://www.ford.mx/",
+    href: "https://www.fordsaltillo.mx/",
   },
   {
     id: 4,
@@ -48,7 +48,7 @@ export const AGENCIES: Agency[] = [
     state: "Coahuila",
     address:
       "Blvd. Harold R. Pape 2013, Col. Universitaria, Monclova, Coahuila",
-    href: "https://www.mazdamexico.com.mx/",
+    href: "https://www.mazda.mx/distribuidores/mazda-monclova",
   },
   {
     id: 5,
@@ -58,7 +58,7 @@ export const AGENCIES: Agency[] = [
     state: "Coahuila",
     address:
       "Blvd. Venustiano Carranza 4480, Virreyes Residencial, Saltillo, Coahuila",
-    href: "https://www.mazdamexico.com.mx/",
+    href: "https://www.mazda.mx/distribuidores/mazda-saltillo",
   },
   {
     id: 6,
@@ -68,7 +68,7 @@ export const AGENCIES: Agency[] = [
     state: "Coahuila",
     address:
       "Av. H. Colegio Militar 914, Las Fuentes, Piedras Negras, Coahuila",
-    href: "https://www.mazdamexico.com.mx/",
+    href: "https://www.mazda.mx/distribuidores/mazda-piedras-negras",
   },
   {
     id: 7,
@@ -78,7 +78,7 @@ export const AGENCIES: Agency[] = [
     state: "Nuevo León",
     address:
       "Av. Lázaro Cárdenas 2660, Valle Oriente, San Pedro Garza García, Nuevo León",
-    href: "https://www.volvocars.com/mx/",
+    href: "https://sueciacarmonterrey.com/",
   },
   {
     id: 8,
@@ -88,7 +88,7 @@ export const AGENCIES: Agency[] = [
     state: "Nuevo León",
     address:
       "Av. Paseo de los Leones 3200, Bosques de las Cumbres, Monterrey, Nuevo León",
-    href: "https://www.volvocars.com/mx/",
+    href: "https://sueciacarmonterrey.com/",
   },
   {
     id: 9,
@@ -98,7 +98,7 @@ export const AGENCIES: Agency[] = [
     state: "Coahuila",
     address:
       "Blvd. Venustiano Carranza 4620, Virreyes Residencial, Saltillo, Coahuila",
-    href: "https://www.volvocars.com/mx/",
+    href: "https://sueciacarmonterrey.com/",
   },
   {
     id: 10,
@@ -108,7 +108,17 @@ export const AGENCIES: Agency[] = [
     state: "Chihuahua",
     address:
       "Periférico de la Juventud 7705, Cumbres IV Etapa, Chihuahua, Chihuahua",
-    href: "https://www.volvocars.com/mx/",
+    href: "https://sueciacarmonterrey.com/",
+  },
+  {
+    id: 11,
+    brand: "lincoln",
+    name: "Lincoln Saltillo",
+    city: "Saltillo",
+    state: "Coahuila",
+    address:
+      "Blvd. Venustiano Carranza 4600, Virreyes Residencial, 25230 Saltillo, Coahuila",
+    href: "https://lincolnsaltillo.mx/",
   },
 ];
 
@@ -125,6 +135,10 @@ export const BRAND_META: Record<Brand, { label: string; tagline: string }> = {
     label: "Volvo",
     tagline: "Scandinavian Luxury · Seguridad y sofisticación.",
   },
+  lincoln: {
+    label: "Lincoln",
+    tagline: "American Luxury · Refinamiento y elegancia.",
+  },
 };
 
 /**
@@ -135,4 +149,5 @@ export const BRAND_GRADIENT: Record<Brand, string> = {
   ford: "bg-gradient-to-br from-navy-700 via-navy-900 to-navy-950",
   mazda: "bg-gradient-to-br from-wine-700 via-wine-900 to-navy-950",
   volvo: "bg-gradient-to-br from-graphite-300 via-graphite-600 to-graphite-900",
+  lincoln: "bg-gradient-to-br from-graphite-700 via-graphite-900 to-[#0d0d10]",
 };
