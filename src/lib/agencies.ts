@@ -8,6 +8,8 @@ export interface Agency {
   state: string;
   address: string;
   href: string;
+  lat: number;
+  lng: number;
 }
 
 export const AGENCIES: Agency[] = [
@@ -20,6 +22,8 @@ export const AGENCIES: Agency[] = [
     address:
       "Prol. José Ángel Guerra, Lucha Social, Cd. Miguel Alemán, Tamaulipas",
     href: "https://www.fordmiguelaleman.mx/",
+    lat: 26.4019,
+    lng: -99.0258,
   },
   {
     id: 2,
@@ -29,6 +33,8 @@ export const AGENCIES: Agency[] = [
     state: "Coahuila",
     address: "Carretera México 15 S/N, Zona Industrial, Sabinas, Coahuila",
     href: "https://www.fordsabinas.mx/",
+    lat: 27.8489,
+    lng: -101.1167,
   },
   {
     id: 3,
@@ -39,6 +45,8 @@ export const AGENCIES: Agency[] = [
     address:
       "Blvd. Venustiano Carranza 4600, Virreyes Residencial, Saltillo, Coahuila",
     href: "https://www.fordsaltillo.mx/",
+    lat: 25.4568,
+    lng: -100.9891,
   },
   {
     id: 4,
@@ -49,6 +57,8 @@ export const AGENCIES: Agency[] = [
     address:
       "Blvd. Harold R. Pape 2013, Col. Universitaria, Monclova, Coahuila",
     href: "https://www.mazda.mx/distribuidores/mazda-monclova",
+    lat: 26.9034,
+    lng: -101.4225,
   },
   {
     id: 5,
@@ -59,6 +69,8 @@ export const AGENCIES: Agency[] = [
     address:
       "Blvd. Venustiano Carranza 4480, Virreyes Residencial, Saltillo, Coahuila",
     href: "https://www.mazda.mx/distribuidores/mazda-saltillo",
+    lat: 25.4585,
+    lng: -100.9877,
   },
   {
     id: 6,
@@ -69,6 +81,8 @@ export const AGENCIES: Agency[] = [
     address:
       "Av. H. Colegio Militar 914, Las Fuentes, Piedras Negras, Coahuila",
     href: "https://www.mazda.mx/distribuidores/mazda-piedras-negras",
+    lat: 28.6945,
+    lng: -100.5236,
   },
   {
     id: 7,
@@ -79,6 +93,8 @@ export const AGENCIES: Agency[] = [
     address:
       "Av. Lázaro Cárdenas 2660, Valle Oriente, San Pedro Garza García, Nuevo León",
     href: "https://sueciacarmonterrey.com/",
+    lat: 25.6408,
+    lng: -100.3145,
   },
   {
     id: 8,
@@ -89,6 +105,8 @@ export const AGENCIES: Agency[] = [
     address:
       "Av. Paseo de los Leones 3200, Bosques de las Cumbres, Monterrey, Nuevo León",
     href: "https://sueciacarmonterrey.com/",
+    lat: 25.7391,
+    lng: -100.4035,
   },
   {
     id: 9,
@@ -99,6 +117,8 @@ export const AGENCIES: Agency[] = [
     address:
       "Blvd. Venustiano Carranza 4620, Virreyes Residencial, Saltillo, Coahuila",
     href: "https://sueciacarmonterrey.com/",
+    lat: 25.4571,
+    lng: -100.9895,
   },
   {
     id: 10,
@@ -109,6 +129,8 @@ export const AGENCIES: Agency[] = [
     address:
       "Periférico de la Juventud 7705, Cumbres IV Etapa, Chihuahua, Chihuahua",
     href: "https://sueciacarmonterrey.com/",
+    lat: 28.6730,
+    lng: -106.1310,
   },
   {
     id: 11,
@@ -119,6 +141,8 @@ export const AGENCIES: Agency[] = [
     address:
       "Blvd. Venustiano Carranza 4600, Virreyes Residencial, 25230 Saltillo, Coahuila",
     href: "https://lincolnsaltillo.mx/",
+    lat: 25.4568,
+    lng: -100.9891,
   },
 ];
 
@@ -150,4 +174,11 @@ export const BRAND_GRADIENT: Record<Brand, string> = {
   mazda: "bg-gradient-to-br from-wine-700 via-wine-900 to-navy-950",
   volvo: "bg-gradient-to-br from-graphite-300 via-graphite-600 to-graphite-900",
   lincoln: "bg-gradient-to-br from-graphite-700 via-graphite-900 to-[#0d0d10]",
+};
+
+export const BRAND_PIN_COLOR: Record<Brand, string> = {
+  ford: "#1e3a8a",
+  mazda: "#7f1d1d",
+  volvo: "#e5e7eb",
+  lincoln: "#111827",
 };

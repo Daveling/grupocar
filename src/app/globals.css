@@ -175,6 +175,95 @@ body {
   animation: orbital-ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
 }
 
+/* Leaflet map — luxury dark popup */
+.leaflet-container {
+  font-family: inherit;
+  background: #0a0f1a;
+}
+.leaflet-container a.leaflet-popup-close-button { display: none; }
+.leaflet-popup-content-wrapper {
+  background: linear-gradient(155deg, rgba(17, 22, 34, 0.98), rgba(10, 14, 25, 0.98));
+  border: 1px solid rgba(245, 199, 106, 0.35);
+  border-radius: 16px;
+  box-shadow: 0 25px 60px -10px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(245, 199, 106, 0.08) inset;
+  padding: 0;
+  color: #f7f2e6;
+}
+.leaflet-popup-content {
+  margin: 0 !important;
+  width: 260px !important;
+}
+.leaflet-popup-tip {
+  background: rgba(17, 22, 34, 0.98);
+  border: 1px solid rgba(245, 199, 106, 0.35);
+}
+.grupocar-popup-inner {
+  padding: 18px 18px 16px;
+}
+.grupocar-popup-brand {
+  display: inline-block;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: #f5c76a;
+  border: 1px solid rgba(245, 199, 106, 0.4);
+  border-radius: 999px;
+  padding: 3px 10px;
+  margin-bottom: 12px;
+}
+.grupocar-popup-title {
+  font-family: var(--font-display, 'Cormorant Garamond', serif);
+  font-size: 22px;
+  font-weight: 300;
+  letter-spacing: -0.01em;
+  color: #fff;
+  line-height: 1.1;
+  margin: 0 0 4px;
+}
+.grupocar-popup-city {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: #f5c76a;
+  margin: 0 0 10px;
+}
+.grupocar-popup-address {
+  font-size: 12px;
+  line-height: 1.5;
+  color: rgba(247, 242, 230, 0.75);
+  margin: 0 0 14px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+.grupocar-popup-cta {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #0a0f1a;
+  background: linear-gradient(135deg, #f5c76a, #e2b04a);
+  padding: 9px 14px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.grupocar-popup-cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 25px -5px rgba(245, 199, 106, 0.5);
+}
+.leaflet-control-attribution {
+  background: rgba(10, 14, 25, 0.8) !important;
+  color: rgba(255, 255, 255, 0.45) !important;
+  font-size: 9px !important;
+  border-top-left-radius: 8px;
+}
+.leaflet-control-attribution a {
+  color: rgba(245, 199, 106, 0.7) !important;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

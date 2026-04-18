@@ -1,8 +1,8 @@
 "use client";
 import { useMemo, useState } from "react";
+import dynamic from "next/dynamic";
 import { motion, AnimatePresence } from "framer-motion";
-import { MapPin, ArrowUpRight, Building2, Compass, Flag, Crown } from "lucide-react";
-import RadialOrbitalTimeline from "@/components/ui/radial-orbital-timeline";
+import { MapPin, ArrowUpRight } from "lucide-react";
 import { AGENCIES, BRAND_META, BRAND_GRADIENT, type Brand } from "@/lib/agencies";
 
 const ALL_FILTER = "todas" as const;
@@ -16,13 +16,16 @@ const FILTERS: { key: Filter; label: string }[] = [
   { key: "lincoln", label: "Lincoln" },
 ];
 
-// Pick an icon per brand for the orbital timeline
-const BRAND_ICON: Record<Brand, React.ElementType> = {
-  ford: Compass,
-  mazda: Flag,
-  volvo: Building2,
-  lincoln: Crown,
-};
+const AgenciesMap = dynamic(() => import("./agencies-map"), {
+  ssr: false,
+  loading: () => (
+    <div className="flex h-[560px] items-center justify-center rounded-3xl border border-gold-500/15 bg-navy-950/60">
+      <span className="text-[10px] font-medium uppercase tracking-[0.32em] text-white/40">
+        Cargando mapa…
+      </span>
+    </div>
+  ),
+});
 
 export function Agencies() {
   const [filter, setFilter] = useState<Filter>(ALL_FILTER);
@@ -33,30 +36,6 @@ export function Agencies() {
         ? AGENCIES
         : AGENCIES.filter((a) => a.brand === filter),
     [filter],
-  );
-
-  const timelineData = useMemo(
-    () =>
-      AGENCIES.map((a, idx) => ({
-        id: a.id,
-        title: a.name,
-        date: a.state,
-        category: BRAND_META[a.brand].label,
-        content: a.address,
-        icon: BRAND_ICON[a.brand],
-        relatedIds: AGENCIES.filter(
-          (b) => b.brand === a.brand && b.id !== a.id,
-        ).map((b) => b.id),
-        status: (idx % 3 === 0
-          ? "completed"
-          : idx % 3 === 1
-            ? "in-progress"
-            : "pending") as "completed" | "in-progress" | "pending",
-        energy: 70 + ((idx * 7) % 25),
-        href: a.href,
-        brand: a.brand,
-      })),
-    [],
   );
 
   return (
@@ -84,22 +63,8 @@ export function Agencies() {
           </p>
         </div>
 
-        {/* Orbital visualization */}
-        <div className="mt-14 md:mt-16">
-          <div className="mb-4 flex items-center gap-3">
-            <span className="text-[10px] font-medium uppercase tracking-[0.32em] text-white/50">
-              Navegador Interactivo
-            </span>
-            <span className="hairline flex-1" />
-          </div>
-          <RadialOrbitalTimeline timelineData={timelineData} />
-          <p className="mt-4 text-center text-[11px] uppercase tracking-[0.28em] text-white/45">
-            Toca cualquier agencia para ver detalles y visitar el sitio oficial
-          </p>
-        </div>
-
         {/* Filters */}
-        <div className="mt-16 flex flex-wrap items-center justify-center gap-2 sm:mt-24 md:gap-3">
+        <div className="mt-12 flex flex-wrap items-center justify-center gap-2 sm:mt-16 md:gap-3">
           {FILTERS.map((f) => {
             const isActive = filter === f.key;
             return (
@@ -125,8 +90,22 @@ export function Agencies() {
           })}
         </div>
 
+        {/* Map */}
+        <div className="mt-8 sm:mt-10">
+          <div className="mb-4 flex items-center gap-3">
+            <span className="text-[10px] font-medium uppercase tracking-[0.32em] text-white/50">
+              Mapa Interactivo
+            </span>
+            <span className="hairline flex-1" />
+          </div>
+          <AgenciesMap filter={filter} />
+          <p className="mt-4 text-center text-[11px] uppercase tracking-[0.28em] text-white/45">
+            Toca cualquier pin para ver detalles y visitar el sitio oficial
+          </p>
+        </div>
+
         {/* Agency cards grid */}
-        <div className="mt-10 grid gap-4 sm:mt-12 sm:gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-16 grid gap-4 sm:mt-20 sm:gap-5 md:grid-cols-2 lg:grid-cols-3">
           <AnimatePresence mode="popLayout">
             {filtered.map((a, i) => {
               const meta = BRAND_META[a.brand];
