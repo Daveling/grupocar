@@ -107,9 +107,11 @@ export default function AgenciesMap({ filter }: AgenciesMapProps) {
           <Marker key={a.id} position={[a.lat, a.lng]} icon={buildIcon(a.brand)}>
             <Popup closeButton={false} className="grupocar-popup">
               <div className="grupocar-popup-inner">
-                <span className="grupocar-popup-brand">
-                  {BRAND_META[a.brand].label}
-                </span>
+                <div className="grupocar-popup-header">
+                  <span className="grupocar-popup-brand">
+                    {BRAND_META[a.brand].label}
+                  </span>
+                </div>
                 <h4 className="grupocar-popup-title">{a.name}</h4>
                 <p className="grupocar-popup-city">
                   {a.city} · {a.state}
