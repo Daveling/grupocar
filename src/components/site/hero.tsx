@@ -88,10 +88,6 @@ export function Hero() {
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
           className="mb-8 flex items-center gap-2 rounded-full border border-gold-400/25 bg-white/[0.04] px-4 py-2 backdrop-blur-xl sm:gap-3 sm:px-5"
         >
-          <span className="relative flex h-2 w-2">
-            <span className="absolute inset-0 animate-ping rounded-full bg-gold-400 opacity-70" />
-            <span className="relative inline-flex h-2 w-2 rounded-full bg-gold-400" />
-          </span>
           <span className="text-[9px] font-medium uppercase tracking-[0.22em] text-gold-100/85 sm:text-[11px] sm:tracking-[0.32em]">
             Distribuidor Autorizado · Noreste de México
           </span>
