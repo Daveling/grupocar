@@ -18,31 +18,40 @@ interface AgenciesMapProps {
   filter: MapFilter;
 }
 
+const BRAND_LOGO: Record<Brand, string> = {
+  ford: "/logos/ford_logo_icon_169155.png",
+  mazda: "/logos/Mazda_logo.png",
+  volvo: "/logos/Volvo-Logo-1930.png",
+  lincoln: "/logos/logo-Lincoln.png",
+};
+
 function buildIcon(brand: Brand): L.DivIcon {
   const color = BRAND_PIN_COLOR[brand];
-  const ring = brand === "volvo" ? "#0a0f1a" : "#f5c76a";
+  const ring = "#f5c76a";
+  const logo = BRAND_LOGO[brand];
   return L.divIcon({
     className: "grupocar-marker",
     html: `
       <div style="position:relative;transform:translate(-50%,-100%);">
         <div style="
-          width:34px;height:34px;border-radius:9999px;
+          width:42px;height:42px;border-radius:9999px;
           background:${color};
           border:2px solid ${ring};
-          box-shadow:0 6px 20px rgba(0,0,0,.55), 0 0 0 4px rgba(245,199,106,.12);
+          box-shadow:0 6px 20px rgba(0,0,0,.65), 0 0 0 4px rgba(245,199,106,.15);
           display:flex;align-items:center;justify-content:center;
-          font-family:'Inter',sans-serif;font-size:10px;font-weight:700;
-          letter-spacing:.08em;color:${brand === "volvo" ? "#0a0f1a" : "#f5c76a"};
-        ">${brand.charAt(0).toUpperCase()}</div>
+          overflow:hidden;
+        ">
+          <img src="${logo}" style="width:26px;height:26px;object-fit:contain;display:block;" />
+        </div>
         <div style="
           position:absolute;left:50%;bottom:-8px;transform:translateX(-50%);
-          width:2px;height:10px;background:linear-gradient(to bottom, ${ring}, transparent);
+          width:2px;height:10px;background:linear-gradient(to bottom,${ring},transparent);
         "></div>
       </div>
     `,
-    iconSize: [34, 44],
-    iconAnchor: [17, 44],
-    popupAnchor: [0, -40],
+    iconSize: [42, 52],
+    iconAnchor: [21, 52],
+    popupAnchor: [0, -48],
   });
 }
 
