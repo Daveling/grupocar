@@ -180,5 +180,5 @@ export const BRAND_PIN_COLOR: Record<Brand, string> = {
   ford: "#1e3a8a",
   mazda: "#7f1d1d",
   volvo: "#e5e7eb",
-  lincoln: "#111827",
+  lincoln: "#4a5568",
 };

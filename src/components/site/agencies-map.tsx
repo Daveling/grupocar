@@ -29,6 +29,7 @@ function buildIcon(brand: Brand): L.DivIcon {
   const color = BRAND_PIN_COLOR[brand];
   const ring = "#f5c76a";
   const logo = BRAND_LOGO[brand];
+  const logoSize = brand === "lincoln" ? "30px" : "26px";
   return L.divIcon({
     className: "grupocar-marker",
     html: `
@@ -41,7 +42,7 @@ function buildIcon(brand: Brand): L.DivIcon {
           display:flex;align-items:center;justify-content:center;
           overflow:hidden;
         ">
-          <img src="${logo}" style="width:26px;height:26px;object-fit:contain;display:block;" />
+          <img src="${logo}" style="width:${logoSize};height:${logoSize};object-fit:contain;display:block;" />
         </div>
         <div style="
           position:absolute;left:50%;bottom:-8px;transform:translateX(-50%);
