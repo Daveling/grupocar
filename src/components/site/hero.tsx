@@ -81,7 +81,7 @@ export function Hero() {
       <div className="absolute inset-0 -z-10 radial-spotlight" />
       <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 h-px bg-gradient-to-r from-transparent via-gold-500/30 to-transparent" />
 
-      <div className="relative mx-auto flex max-w-7xl flex-col items-center px-5 pb-16 pt-28 sm:px-6 sm:pb-20 sm:pt-36 lg:px-10">
+      <div className="relative mx-auto flex max-w-7xl flex-col items-center px-5 pb-16 pt-24 sm:px-6 sm:pb-20 sm:pt-28 lg:px-10">
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
@@ -92,16 +92,6 @@ export function Hero() {
             Distribuidor Autorizado · Noreste de México
           </span>
         </motion.div>
-
-        <motion.h1
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
-          className="max-w-4xl text-balance text-center font-display text-[44px] font-light leading-[1.02] tracking-tight text-white sm:text-6xl md:text-7xl"
-        >
-          Cuatro legados.{" "}
-          <span className="shine-text italic">Una sola exigencia.</span>
-        </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 16 }}
@@ -143,7 +133,7 @@ export function Hero() {
                   <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold-300/40 to-transparent" />
 
                   <div className="absolute left-4 top-4 rounded-full border border-gold-300/40 bg-petrol-950/75 px-2.5 py-1 text-[9px] font-medium uppercase tracking-[0.24em] text-gold-100 backdrop-blur-md sm:left-6 sm:top-6 sm:px-3 sm:text-[10px] sm:tracking-[0.32em]">
-                    {count} Agencias
+                    {count} {count === 1 ? "Agencia" : "Agencias"}
                   </div>
 
                   <div className="absolute inset-0 flex items-center justify-center px-6 sm:px-8">
