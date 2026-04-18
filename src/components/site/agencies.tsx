@@ -79,7 +79,7 @@ export function Agencies() {
             </h2>
           </div>
           <p className="text-balance text-white/65 md:text-right">
-            Diez agencias, cuatro estados y tres marcas que definen el
+            Once agencias, cuatro estados y cuatro marcas que definen el
             estándar de la industria. Selecciona una sede para explorarla.
           </p>
         </div>

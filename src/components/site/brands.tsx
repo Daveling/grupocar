@@ -44,7 +44,7 @@ export function Brands() {
             — Nuestras Marcas —
           </span>
           <h2 className="max-w-4xl font-display text-5xl font-light leading-[1.05] tracking-tight text-white md:text-7xl">
-            Tres legados.{" "}
+            Cuatro legados.{" "}
             <span className="italic text-gold-300">Una sola</span>
             <br />
             exigencia.

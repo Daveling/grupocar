@@ -103,7 +103,7 @@ export function Hero() {
           transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1], delay: 0.1 }}
           className="max-w-4xl text-balance text-center font-display text-[44px] font-light leading-[1.02] tracking-tight text-white sm:text-6xl md:text-7xl"
         >
-          Tres legados.{" "}
+          Cuatro legados.{" "}
           <span className="shine-text italic">Una sola exigencia.</span>
         </motion.h1>
 
@@ -113,9 +113,9 @@ export function Hero() {
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1], delay: 0.3 }}
           className="mt-6 max-w-2xl text-balance text-center text-sm leading-relaxed text-white/65 md:text-base"
         >
-          Grupo CAR representa a Ford, Mazda y Volvo en Nuevo León, Coahuila,
-          Tamaulipas y Chihuahua. Una red construida sobre precisión, servicio
-          y confianza.
+          Grupo CAR representa a Ford, Mazda, Volvo y Lincoln en Nuevo León,
+          Coahuila, Tamaulipas y Chihuahua. Una red construida sobre
+          precisión, servicio y confianza.
         </motion.p>
 
         {/* Brand cards — hero centerpiece */}
@@ -149,11 +149,6 @@ export function Hero() {
                   <div className="absolute left-4 top-4 rounded-full border border-gold-300/40 bg-petrol-950/75 px-2.5 py-1 text-[9px] font-medium uppercase tracking-[0.24em] text-gold-100 backdrop-blur-md sm:left-6 sm:top-6 sm:px-3 sm:text-[10px] sm:tracking-[0.32em]">
                     {count} Agencias
                   </div>
-
-                  <ArrowUpRight
-                    className="absolute right-4 top-4 h-5 w-5 text-gold-200 transition-all duration-500 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-gold-300 sm:right-6 sm:top-6 sm:h-6 sm:w-6"
-                    strokeWidth={1.25}
-                  />
 
                   <div className="absolute inset-0 flex items-center justify-center px-6 sm:px-8">
                     <BrandLockup
