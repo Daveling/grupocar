@@ -33,8 +33,9 @@ function buildIcon(brand: Brand): L.DivIcon {
   return L.divIcon({
     className: "grupocar-marker",
     html: `
-      <div style="position:relative;transform:translate(-50%,-100%);">
+      <div style="width:42px;height:52px;position:relative;">
         <div style="
+          position:absolute;top:0;left:0;
           width:42px;height:42px;border-radius:9999px;
           background:${color};
           border:2px solid ${ring};
@@ -45,14 +46,14 @@ function buildIcon(brand: Brand): L.DivIcon {
           <img src="${logo}" style="width:${logoSize};height:${logoSize};object-fit:contain;display:block;" />
         </div>
         <div style="
-          position:absolute;left:50%;bottom:-8px;transform:translateX(-50%);
+          position:absolute;bottom:0;left:50%;transform:translateX(-50%);
           width:2px;height:10px;background:linear-gradient(to bottom,${ring},transparent);
         "></div>
       </div>
     `,
     iconSize: [42, 52],
     iconAnchor: [21, 52],
-    popupAnchor: [0, -48],
+    popupAnchor: [0, -54],
   });
 }
 

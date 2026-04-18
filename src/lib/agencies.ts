@@ -45,8 +45,8 @@ export const AGENCIES: Agency[] = [
     address:
       "Blvd. Venustiano Carranza 4600, Virreyes Residencial, Saltillo, Coahuila",
     href: "https://www.fordsaltillo.mx/",
-    lat: 25.4568,
-    lng: -100.9891,
+    lat: 25.4638,
+    lng: -100.9980,
   },
   {
     id: 4,
@@ -69,8 +69,8 @@ export const AGENCIES: Agency[] = [
     address:
       "Blvd. Venustiano Carranza 4480, Virreyes Residencial, Saltillo, Coahuila",
     href: "https://www.mazda.mx/distribuidores/mazda-saltillo",
-    lat: 25.4585,
-    lng: -100.9877,
+    lat: 25.4638,
+    lng: -100.9790,
   },
   {
     id: 6,
@@ -117,8 +117,8 @@ export const AGENCIES: Agency[] = [
     address:
       "Blvd. Venustiano Carranza 4620, Virreyes Residencial, Saltillo, Coahuila",
     href: "https://sueciacarmonterrey.com/",
-    lat: 25.4571,
-    lng: -100.9895,
+    lat: 25.4490,
+    lng: -100.9980,
   },
   {
     id: 10,
@@ -141,8 +141,8 @@ export const AGENCIES: Agency[] = [
     address:
       "Blvd. Venustiano Carranza 4600, Virreyes Residencial, 25230 Saltillo, Coahuila",
     href: "https://lincolnsaltillo.mx/",
-    lat: 25.4568,
-    lng: -100.9891,
+    lat: 25.4490,
+    lng: -100.9790,
   },
 ];
 
